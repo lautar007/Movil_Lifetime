@@ -1,26 +1,26 @@
 on_off_app = True
 disp_data = {}
 
-# while on_off_app:
-#     print('''Bienvenido. Este es el menú inicial.
-#           Elija el número de la siguiete lista de opciones 
+while on_off_app:
+    print('''Bienvenido. Este es el menú inicial.
+          Elija el número de la siguiete lista de opciones 
           
-#           1. Contestar encuesta.
-#           2. Visualizar resultados. 
-#           0. Apagar programa''')
+          1. Contestar encuesta.
+          2. Visualizar resultados. 
+          0. Apagar programa''')
     
-#     option = input("Ingrese el número seleccionado ahora:")
+    option = input("Ingrese el número seleccionado ahora:")
 
-#     match option:
-#         case "1": 
-#             print("Sección para contestar encuesta.")
-#             option = ("Presione ENTER para continuar.")
-#         case "2":
-#             print("Sección para visualizar resultado.")
-#             option = ("Presione ENTER para continuar.")
-#         case "0":
-#             print("Gracias por utilizar el programa. Recuerde siempre cuidar sus dispositivos móviles.")
-#             on_off_app = False
+    match option:
+        case "1": 
+            print("Sección para contestar encuesta.")
+            option = ("Presione ENTER para continuar.")
+        case "2":
+            print("Sección para visualizar resultado.")
+            option = ("Presione ENTER para continuar.")
+        case "0":
+            print("Gracias por utilizar el programa. Recuerde siempre cuidar sus dispositivos móviles.")
+            on_off_app = False
     
 
 
@@ -93,7 +93,7 @@ def add_regis(regis):
     print(f"Registro: {regis}")
 
 #Descomentar para probar la función:
-#add_regis("Apple-iPhone 12-4-6-3")
+#add_regis("Samsung-S10-4-2-5")
 
 #Función cb para buscar información por marca:
 def data_by_brand(brand, model, life_time, updates, score, req_brand):
@@ -115,4 +115,4 @@ def show_regis(brand, model, life_time, updates, score):
      print(f"Marca: {brand} | Modelo: {model} | Años de funcionamiento: {life_time} | Cantidad de actualizaciones: {updates} | Puntaje: {score}")
 
 #Descomentar para probrar la función
-regis_scan(show_regis) 
+#regis_scan(data_by_brand, "Samsung") 
