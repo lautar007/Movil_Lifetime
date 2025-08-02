@@ -9,7 +9,7 @@ while on_off_app:
           2. Visualizar resultados. 
           0. Apagar programa''')
     
-    option = input("Ingrese el número seleccionado ahora:")
+    option = input("Ingrese el número seleccionado ahora: ")
 
     match option:
         case "1": 
@@ -84,6 +84,76 @@ def regis_scan(cb, req_brand = False, req_model = False):
         print(f"Promedio de calificaciones de la marca: {(total_score / total_regis):.2f}")
         print(f"Datos calculados a partir de {total_regis} registros guardados.")
 
+#Función para completar encuestas:
+#Respondiente los temas "marca-modelo-años_de_vida-actualizaciones-puntaje o rendimiento general"
+
+def encuesta():
+    while True:
+        try:
+            marca = input("Ingrese la marca del dispositivo: ").strip()
+            if marca and len(marca) >= 2:
+                marca.capitalize()
+                break
+            else:
+                print("La marca tiene que ser de almenos de 2 caracter.")
+        except Exception:
+            print("❌ Error al ingresar la marca. Intentelo denuevo.")
+        
+    while True:
+        try:
+            modelo = input("Ingrese el modelo del dispositivo: ").strip()
+            if modelo and len(modelo) > 0:
+                break
+            else:
+                print("Por favor ingrese denuevo el modelo.")
+        except Exception:
+            print("❌ Error al ingresar el modelo. Intente denuevo.")
+
+    while True:
+        try:
+            tiempo_vida = input("Ingrese los años de uso que tuvo el dispositivo: ").strip()
+            tiempo_vida = int(tiempo_vida)
+            if 0 < tiempo_vida < 20:
+                tiempo_vida = str(tiempo_vida)
+                break
+            else:
+                print("El tiempo de uso puede tener entre 0-20 años.")
+        except TypeError:
+            print("❌ Error, el tipo de dato tiene que ser numerico.")
+        except Exception:
+            print("❌ Error al ingresar el tiempo de vida. Intentelo denuevo.")
+
+    while True:
+        try:
+            actualizaciones = input("Ingrese cantidades de actualizaciones que tiene el dispositivo: ")
+            actualizaciones = int(actualizaciones)
+            if 0 < actualizaciones < 100:
+                actualizaciones = str(actualizaciones)
+                break
+            else:
+                print("La cantidades de actualizaciones tiene que estar entre 0-100")
+        except TypeError:
+            print("❌ Error, el tipo de dato tiene que ser numerico.")
+        except Exception:
+            print("❌ Error al ingresae la cantidad de actualizaciones. Intente denuevo.")
+    
+    while True:
+        try:
+            rendimiento = input("Ingrese el rendimiento general del dispositivo del (1-10): ")
+            rendimiento = int(rendimiento)
+            if 0 < rendimiento <= 10:
+                rendimiento = str(rendimiento)
+                break
+            else:
+                print("La untuacion tiene que ser entre el 1 al 10.")
+        except TypeError:
+            print("❌ Error, el tipo de dato tiene que ser numerico.")
+        except Exception:
+            print("❌ Error al ingresear la putuacion de rendimiento. Intente denuevo.")
+
+    #Concatenamos los strings
+    return (f"{marca}-{modelo}-{tiempo_vida}-{actualizaciones}-{rendimiento}")
+
 #Función para agregar un registro:
 #El registro que recibe esta función cumple el siguiente formaro: 
 #    "marca-modelo-años_de_vida-actualizaciones-puntaje"
@@ -93,7 +163,7 @@ def add_regis(regis):
     print(f"Registro: {regis}")
 
 #Descomentar para probar la función:
-#add_regis("Samsung-S10-4-2-5")
+# add_regis(encuesta())
 
 #Función cb para buscar información por marca:
 def data_by_brand(brand, model, life_time, updates, score, req_brand):
