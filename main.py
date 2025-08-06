@@ -28,7 +28,9 @@ def encuesta():
                 marca.capitalize()
                 break
             else:
+                print("="*50)
                 print("La marca tiene que ser de almenos de 2 caracter.")
+                print("="*50)
         except Exception:
             print("❌ Error al ingresar la marca. Intentelo denuevo.")
         
@@ -38,7 +40,9 @@ def encuesta():
             if modelo and len(modelo) > 0:
                 break
             else:
+                print("="*50)
                 print("Por favor ingrese denuevo el modelo.")
+                print("="*50)
         except Exception:
             print("❌ Error al ingresar el modelo. Intente denuevo.")
 
@@ -50,11 +54,14 @@ def encuesta():
                 tiempo_vida = str(tiempo_vida)
                 break
             else:
+                print("="*50)
                 print("El tiempo de uso puede tener entre 0-20 años.")
+                print("="*50)
         except TypeError:
             print("❌ Error, el tipo de dato tiene que ser numerico.")
         except Exception:
             print("❌ Error al ingresar el tiempo de vida. Intentelo denuevo.")
+
 
     while True:
         try:
@@ -64,11 +71,13 @@ def encuesta():
                 actualizaciones = str(actualizaciones)
                 break
             else:
+                print("="*50)
                 print("La cantidades de actualizaciones tiene que estar entre 0-100")
+                print("="*50)
         except TypeError:
-            print("❌ Error, el tipo de dato tiene que ser numerico.")
+            print("❌ Error, el tipo de dato tiene que ser númerico.")
         except Exception:
-            print("❌ Error al ingresae la cantidad de actualizaciones. Intente denuevo.")
+            print("❌ Error al ingresar la cantidad de actualizaciones. Intente denuevo.")
     
     while True:
         try:
@@ -78,11 +87,14 @@ def encuesta():
                 rendimiento = str(rendimiento)
                 break
             else:
-                print("La untuacion tiene que ser entre el 1 al 10.")
+                print("="*50)
+                print("La actuacion tiene que ser entre el 1 al 10.")
+                print("="*50)
         except TypeError:
-            print("❌ Error, el tipo de dato tiene que ser numerico.")
+            print("❌ Error, el tipo de dato tiene que ser númerico.")
         except Exception:
-            print("❌ Error al ingresear la putuacion de rendimiento. Intente denuevo.")
+            print("❌ Error al ingresar la putuacion de rendimiento. Intente denuevo.")
+
 
     #Concatenamos los strings
     return (f"{marca}-{modelo}-{tiempo_vida}-{actualizaciones}-{rendimiento}")
