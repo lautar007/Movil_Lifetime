@@ -144,7 +144,7 @@ def regis_scan(cb, req_brand = False, req_model = False):
 
     if req_model:
         print("-"*50)
-        print(f"##### Estadísticas del modelo requerido: {req_brand}. #####")
+        print(f"##### Estadísticas del modelo requerido: {req_model}. #####")
         print(f"Promedio de vida útil en años: {(total_lt / total_regis):.2f}")
         print(f"Promedio de cantidad de actualizaciones: {(total_updt / total_regis):.2f}")
         print("Cuantas menos actualizaciones, mejor rendimiento de dispositivo.")
